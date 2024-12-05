@@ -12,6 +12,3 @@ export * from "./string";
 export * from "./structure";
 export * from "./types";
 export * from "./utils";
-
-
-import { sanitizeArray } from "../../li"

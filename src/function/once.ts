@@ -2,7 +2,7 @@ export default function once<T>(callback: (...args: unknown[]) => T): (...args: 
   let called = false;
   let result: T;
 
-  return function(...args: unknown[]): T {
+  return (...args: unknown[]): T => {
     if(!called) {
       called = true;
       result = callback(...args);

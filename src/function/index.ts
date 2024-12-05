@@ -14,6 +14,7 @@ import compose from "./compose";
 import defer from './defer';
 import identity from './identity';
 import parallel from "./parallel";
+import partialRight from './partialRight';
 
 export {
   compose,
@@ -28,6 +29,7 @@ export {
   once,
   parallel,
   partial,
+  partialRight,
   pipe,
   rate,
   sleep,

@@ -6,7 +6,6 @@ import deepClone from "./deepClone";
 import deepMerge from "./deepMerge";
 import isEqual from "./isEqual";
 import isDeepEqual from "./isDeepEqual";
-import flatten from "./flatten";
 import flattenObject from "./flattenObject";
 
 export {
@@ -18,6 +17,5 @@ export {
   deepMerge,
   isEqual,
   isDeepEqual,
-  flatten,
   flattenObject
 }
