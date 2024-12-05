@@ -1,0 +1,41 @@
+{
+  "name": "nexon",
+  "version": "",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seu-usuario/my-library.git"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "rollup -c",
+    "prebuild": "npm run test"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-typescript": "^7.26.0",
+    "@eslint/js": "^9.16.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.1",
+    "@types/jest": "^29.5.14",
+    "eslint": "^9.16.0",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.12.0",
+    "jest": "^29.7.0",
+    "prettier": "3.4.1",
+    "rollup": "^4.27.4",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.8.1",
+    "typescript-eslint": "^8.16.0"
+  }
+}
