@@ -1,8 +1,8 @@
-export default function once<T>(callback: (...args: unknown[]) => T): (...args: unknown[]) => T {
+export default function once<T>(callback: (...args: any[]) => T): (...args: any[]) => T {
   let called = false;
   let result: T;
 
-  return (...args: unknown[]): T => {
+  return (...args: any[]): T => {
     if(!called) {
       called = true;
       result = callback(...args);

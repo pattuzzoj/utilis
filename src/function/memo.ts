@@ -1,9 +1,9 @@
 import { djb2 } from "../crypto";
 
-export default function memo(callback: (...args: unknown[]) => unknown, cacheTimeout?: number): (...args: unknown[]) => unknown {
+export default function memo(callback: (...args: any[]) => any, cacheTimeout?: number): (...args: any[]) => any {
   const cache = new Map();
 
-  return (...args: unknown[]): unknown => {
+  return (...args: any[]): any => {
     const key = djb2(JSON.stringify(args));
 
     if(!cache.has(key)) {

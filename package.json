@@ -14,7 +14,7 @@
     "url": "https://github.com/seu-usuario/my-library.git"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --no-cache",
     "build": "rollup -c",
     "prebuild": "npm run test"
   },

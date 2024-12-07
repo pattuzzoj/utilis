@@ -1,3 +1,3 @@
-export default function partialRight<T>(callback: (...args: unknown[]) => T, ...partial: unknown[]): (...args: unknown[]) => T {
-  return (...args: unknown[]): T => callback(...args, ...partial);
+export default function partialRight<T>(callback: (...args: any[]) => T, ...partial: any[]): (...args: any[]) => T {
+  return (...args: any[]): T => callback(...args, ...partial);
 }

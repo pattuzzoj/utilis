@@ -5,7 +5,7 @@ import fallback from './fallback';
 import lock from './lock';
 import noop from './noop';
 import once from './once';
-import partial from './partial';
+import partialLeft from './partialLeft';
 import rate from './rate';
 import sleep from "./sleep";
 import guard from './guard';
@@ -28,7 +28,7 @@ export {
   noop,
   once,
   parallel,
-  partial,
+  partialLeft,
   partialRight,
   pipe,
   rate,

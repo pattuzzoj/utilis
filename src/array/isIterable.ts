@@ -1,3 +1,3 @@
-export default function isIterable(value: Exclude<object, unknown>): boolean {
+export default function isIterable(value: unknown): boolean {
   return value != null && typeof value?.[Symbol.iterator] === 'function';
 }

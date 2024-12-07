@@ -1,19 +1,16 @@
 export default function isPrime(num: number): boolean {
-  if (num <= 1) {
+  if (num === 1 || num % 2 === 0) {
     return false;
   }
+
   if (num === 2 || num === 3 || num === 5 || num === 7) {
     return true;
   }
 
-  if (num % 2 === 0 || num % 3 === 0 || num % 5 === 0 || num % 7 === 0) {
-    return false;
-  }
+  const limit = Math.sqrt(Math.sqrt(num));
 
-  const limit = Math.sqrt(num);
-
-  for (let index = 11; index <= limit; index += 2) {
-    if (num % index === 0) {
+  for (let value = 3; value <= limit; value += 2) {
+    if (num % value === 0) {
       return false;
     }
   }

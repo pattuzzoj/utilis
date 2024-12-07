@@ -12,5 +12,7 @@ export default function divisors(num: number): number[] {
     }
   }
 
+  divisors.push(num);
+
   return divisors.sort((a, b) => a - b);
 }

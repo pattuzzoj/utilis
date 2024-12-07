@@ -1,7 +1,7 @@
-export default function rate(callback: (...args: unknown[]) => void, limit: number, interval: number): (...args: unknown[]) => boolean {
+export default function rate(callback: (...args: any[]) => void, limit: number, interval: number): (...args: any[]) => boolean {
   let calls = 0;
 
-  return (...args: unknown[]): boolean => {
+  return (...args: any[]): boolean => {
     if (calls < limit) {
       if(calls === 0) {
         setTimeout(() => {

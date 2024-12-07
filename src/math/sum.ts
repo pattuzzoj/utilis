@@ -1,3 +1,3 @@
-export default function sum(arr: number[]): number {
-  return arr.reduce((total, num) => total + num, 0);
+export default function sum(values: number[]): number {
+  return values.reduce((total, value) => total + value, 0);
 }

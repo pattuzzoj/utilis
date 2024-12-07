@@ -1,5 +1,5 @@
 import { sum } from ".";
 
-export default function average(arr: number[]): number {
-  return arr.length ? (sum(arr) / arr.length) : 0;
+export default function average(values: number[]): number {
+  return values.length ? (sum(values) / values.length) : 0;
 }
