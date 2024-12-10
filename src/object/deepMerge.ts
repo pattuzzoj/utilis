@@ -1,18 +1,18 @@
 import { isArray, isObject } from "../types";
-import deepClone from "./deepClone";
 
-export default function deepMerge(...values: object[]): object {
-  const newValue = isArray(values[0]) ? [] : {};
-
-  for (const obj of values as object[]) {
+export default function deepMerge(...values: Record<string, any>[]): Record<string, any>;
+export default function deepMerge(...values: unknown[][]): unknown[];
+export default function deepMerge(...values: any[]): any {
+  return values.reduce((merged, obj) => {
     for (const key in obj) {
       if(isArray(obj[key]) || isObject(obj[key])) {
-        newValue[key] = deepClone(obj[key]);
+        merged[key] = deepMerge(merged[key], obj[key]);
       } else {
-        newValue[key] = obj[key];
+        merged[key] = obj[key];
       }
     }
-  }
 
-  return newValue;
+    return merged;
+  }, isArray(values[0]) ? [] : {});
 }
+

@@ -1,5 +1,5 @@
-import isObject from "./isObject";
+import getType from "./getType";
 
 export default function isPromise(value: object): boolean {
-  return (isObject(value) && "then" in value && "catch" in value) ? true : false;
+  return getType(value) === "promise";
 }

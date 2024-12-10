@@ -1,15 +1,18 @@
 import { isObject } from "../types";
 
-export default function flattenObject(value: object, path: string = ''): object {
-  let flatValue = {};
+export default function flattenObject(obj: Record<string, any>, separator: string = ".", path: string = ''): Record<string, any> {
+  let flatObj = {} as any;
 
-  for (const key in value) {
-    if(isObject(value[key])) {
-      flatValue = {...flatValue, ...flattenObject(value[key], path ? `${path}.${key}` : key)};
-    } else {
-      flatValue[path ? `${path}.${key}` : key] = value[key];
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      const newPath = path ? `${path}${separator}${key}` : key;
+      if (isObject(obj[key])) {
+        Object.assign(flatObj, flattenObject(obj[key], separator, newPath));
+      } else {
+        flatObj[newPath] = obj[key];
+      }
     }
   }
 
-  return flatValue;
+  return flatObj;
 }

@@ -1,9 +1,7 @@
-export default function omit<T extends object, K extends keyof T>(obj: T, keys: K[]): Omit<T, K> {
-  return (Object.keys(obj) as K[]).reduce((result: T, key) => {
-    if(!keys.includes(key)) {
-      result[key] = obj[key];
-    }
+export default function omit<T extends Record<string, any>, K extends string>(obj: T, keys: K[]): Omit<T, K> {
+  const result = { ...obj };
 
-    return result;
-  }, {}) as Omit<T, K>;
+  keys.forEach(key => delete result[key]);
+  
+  return result;
 }

@@ -7,15 +7,27 @@ import deepMerge from "./deepMerge";
 import isEqual from "./isEqual";
 import isDeepEqual from "./isDeepEqual";
 import flattenObject from "./flattenObject";
+import clone from './clone';
+import freeze from './freeze';
+import deepFreeze from './deepFreeze';
+import interpolate from './interpolate';
+import isEqualLength from './isEqualLength';
+import unflattenObject from './unflattenObject';
 
 export {
-  omit,
-  pick,
-  isEmpty,
-  merge,
+  clone,
   deepClone,
+  freeze,
+  deepFreeze,
+  merge,
   deepMerge,
+  flattenObject,
+  unflattenObject,
+  interpolate,
   isEqual,
   isDeepEqual,
-  flattenObject
+  isEmpty,
+  isEqualLength,
+  omit,
+  pick
 }

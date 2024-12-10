@@ -1,7 +1,9 @@
 import { isArray, isEqualType, isObject } from "../types";
 import isEqual from "./isEqual";
 
-export default function isDeepEqual(value1: unknown[] | object, value2: unknown[] | object): boolean {
+export default function isDeepEqual(value1: Record<string, any>, value2: Record<string, any>): boolean;
+export default function isDeepEqual(value1: unknown[], value2: unknown[]): boolean;
+export default function isDeepEqual(value1: any, value2: any): boolean {
   if(!isEqualType(value1, value2) || Object.keys(value1).length !== Object.keys(value2).length) {
     return false;
   }

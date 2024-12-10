@@ -1,11 +1,5 @@
-import { isArray, isObject } from "../types";
-
-export default function isEmpty(value: string | unknown[] | object): boolean {
-  if(typeof value === "string") {
-    return value.trim().length === 0;
-  } else if(isArray(value) || isObject(value)) {
-    return Object.keys(value).length === 0;
-  }
-
-  return false;
+export default function isEmpty(value: Record<string, any>): boolean;
+export default function isEmpty(value: unknown[]): boolean;
+export default function isEmpty(value: any): boolean {
+  return Object.keys(value).length === 0;
 }

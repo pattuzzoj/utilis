@@ -1,13 +1,13 @@
 import { isArray } from "../types";
 
-export default function merge<T extends object>(...values: T[]): T {
-  const resultValue = isArray(values[0]) ? [] : {} as T;
-
-  for (const obj of values) {
+export default function merge(...values: Record<string, any>[]): Record<string, any>;
+export default function merge(...values: unknown[][]): unknown[];
+export default function merge(...values: any[]): any {
+  return values.reduce((merged, obj) => {
     for (const key in obj) {
-      resultValue[key] = obj[key];
+      merged[key] = obj[key];
     }
-  }
 
-  return resultValue;
+    return merged;
+  }, isArray(values[0]) ? [] : {} as any);
 }
